@@ -1,43 +1,40 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "api/global-session.py",
-      "use": "@vercel/python"
+  "functions": {
+    "api/users.py": {
+      "runtime": "python@3.9"
     },
-    {
-      "src": "api/global-playlists.py",
-      "use": "@vercel/python"
-    },
-    {
-      "src": "api/global-current-playlist.py",
-      "use": "@vercel/python"
-    },
-    {
-      "src": "dist/index.html",
-      "use": "@vercel/static"
+    "api/playlists.py": {
+      "runtime": "python@3.9"
     }
-  ],
+  },
   "routes": [
     {
+      "src": "/api/users",
+      "dest": "/api/users.py"
+    },
+    {
+      "src": "/api/users/(.*)",
+      "dest": "/api/users.py"
+    },
+    {
       "src": "/api/global-session",
-      "dest": "api/global-session.py"
+      "dest": "/api/playlists.py"
     },
     {
       "src": "/api/global-playlists",
-      "dest": "api/global-playlists.py"
+      "dest": "/api/playlists.py"
     },
     {
       "src": "/api/global-playlists/(.*)",
-      "dest": "api/global-playlists.py"
+      "dest": "/api/playlists.py"
     },
     {
       "src": "/api/global-current-playlist",
-      "dest": "api/global-current-playlist.py"
+      "dest": "/api/playlists.py"
     },
     {
       "src": "/(.*)",
-      "dest": "/dist/index.html"
+      "dest": "/$1"
     }
   ],
   "buildCommand": "npm run build",
