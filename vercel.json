@@ -1,10 +1,10 @@
 {
   "functions": {
     "api/users.py": {
-      "runtime": "python3.9"
+      "runtime": "python@3.9"
     },
     "api/playlists.py": {
-      "runtime": "python3.9"
+      "runtime": "python@3.9"
     }
   },
   "routes": [
