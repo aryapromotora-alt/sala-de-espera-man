@@ -1,0 +1,42 @@
+{
+  "functions": {
+    "api/users.py": {
+      "runtime": "python3.9"
+    },
+    "api/playlists.py": {
+      "runtime": "python3.9"
+    }
+  },
+  "routes": [
+    {
+      "src": "/api/users",
+      "dest": "/api/users.py"
+    },
+    {
+      "src": "/api/users/(.*)",
+      "dest": "/api/users.py"
+    },
+    {
+      "src": "/api/global-session",
+      "dest": "/api/playlists.py"
+    },
+    {
+      "src": "/api/global-playlists",
+      "dest": "/api/playlists.py"
+    },
+    {
+      "src": "/api/global-playlists/(.*)",
+      "dest": "/api/playlists.py"
+    },
+    {
+      "src": "/api/global-current-playlist",
+      "dest": "/api/playlists.py"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ],
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist"
+}
