@@ -1,15 +1,4 @@
 {
-  "functions": {
-    "api/global-current-playlist.py": {
-      "runtime": "python@3.9"
-    },
-    "api/global-playlist.py": {
-      "runtime": "python@3.9"
-    },
-    "api/global-session.py": {
-      "runtime": "python@3.9"
-    }
-  },
   "routes": [
     {
       "src": "/api/global-current-playlist",
@@ -35,4 +24,3 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist"
 }
-
