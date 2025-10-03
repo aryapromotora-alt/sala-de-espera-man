@@ -2,25 +2,26 @@
   "routes": [
     {
       "src": "/api/global-current-playlist",
-      "dest": "/api/global-current-playlist.py"
+      "dest": "/api/global-current-playlist.js"
     },
     {
       "src": "/api/global-playlists",
-      "dest": "/api/global-playlist.py"
+      "dest": "/api/global-playlist.js"
     },
     {
       "src": "/api/global-playlists/(.*)",
-      "dest": "/api/global-playlist.py"
+      "dest": "/api/global-playlist.js"
     },
     {
       "src": "/api/global-session",
-      "dest": "/api/global-session.py"
+      "dest": "/api/global-session.js"
     },
     {
       "src": "/(.*)",
       "dest": "/$1"
     }
   ],
-  "buildCommand": "npm run build",
+  "buildCommand": "npm install && npm run build",
   "outputDirectory": "dist"
 }
+
