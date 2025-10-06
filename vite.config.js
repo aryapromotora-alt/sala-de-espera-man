@@ -1,8 +1,11 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
+import { fileURLToPath } from 'url';
 
-// As importações do tailwindcss e autoprefixer foram removidas daqui.
+// Corrige a ausência de __dirname em Módulos ES
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 export default defineConfig({
   plugins: [
@@ -10,7 +13,6 @@ export default defineConfig({
       jsxRuntime: 'automatic',
     }),
   ],
-  // A seção 'css' foi removida, pois a configuração será lida do postcss.config.js
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
@@ -22,3 +24,4 @@ export default defineConfig({
     minify: 'esbuild',
   },
 });
+
