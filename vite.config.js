@@ -1,8 +1,8 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
-import tailwindcss from 'tailwindcss/plugin';
-import autoprefixer from 'autoprefixer';
+
+// As importações do tailwindcss e autoprefixer foram removidas daqui.
 
 export default defineConfig({
   plugins: [
@@ -10,11 +10,7 @@ export default defineConfig({
       jsxRuntime: 'automatic',
     }),
   ],
-  css: {
-    postcss: {
-      plugins: [tailwindcss(), autoprefixer()],
-    },
-  },
+  // A seção 'css' foi removida, pois a configuração será lida do postcss.config.js
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
